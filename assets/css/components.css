@@ -1,0 +1,462 @@
+/* ==========================================================================
+   QUALITY INTERIORS — COMPONENT STYLES & INTERACTIVE UI ELEMENTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. MOBILE FULL-SCREEN NAVIGATION DRAWER
+   -------------------------------------------------------------------------- */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--color-charcoal-900);
+  color: var(--color-white);
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5.5rem 2rem 2.5rem 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-smooth);
+}
+
+.mobile-nav-drawer.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-nav-item {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: #DDD8D0;
+  transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-item:hover, .mobile-nav-item.active {
+  color: var(--color-white);
+  transform: translateX(6px);
+}
+
+.mobile-nav-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mobile-nav-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-gray-400);
+}
+
+.mobile-nav-contact a {
+  color: var(--color-beige-400);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   2. INTERACTIVE 3-STEP COST ESTIMATOR
+   -------------------------------------------------------------------------- */
+.estimator-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.estimator-wrapper {
+  background-color: var(--color-offwhite-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-xs);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.estimator-steps-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.estimator-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gray-500);
+}
+
+.estimator-step-indicator.active {
+  color: var(--color-charcoal-900);
+}
+
+.estimator-step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: var(--color-charcoal-700);
+}
+
+.estimator-step-indicator.active .estimator-step-num {
+  background-color: var(--color-charcoal-900);
+  color: var(--color-white);
+  border-color: var(--color-charcoal-900);
+}
+
+.estimator-step-indicator.completed .estimator-step-num {
+  background-color: var(--color-wood-700);
+  color: var(--color-white);
+  border-color: var(--color-wood-700);
+}
+
+.estimator-grid-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.estimator-card-choice {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--border-radius-xs);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.estimator-card-choice:hover {
+  border-color: var(--color-taupe-500);
+  transform: translateY(-3px);
+}
+
+.estimator-card-choice.selected {
+  border-color: var(--color-charcoal-900);
+  background-color: #FFFDF9;
+  box-shadow: var(--shadow-subtle);
+}
+
+.estimator-card-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-offwhite-100);
+  border-radius: var(--border-radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estimator-card-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-wood-700);
+}
+
+.estimator-card-choice h4 {
+  font-size: 1.05rem;
+  color: var(--color-charcoal-900);
+}
+
+.estimator-card-choice p {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  line-height: 1.4;
+}
+
+.estimator-result-card {
+  background-color: var(--color-charcoal-900);
+  color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-xs);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.estimator-result-price {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  color: var(--color-beige-400);
+  line-height: 1.1;
+  margin: 0.5rem 0 0.75rem 0;
+}
+
+.estimator-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: #CCC7BF;
+}
+
+.estimator-breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.estimator-breakdown-item svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--color-wood-700);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. MODAL / DIALOG & LIGHTBOX
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-xs);
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-floating);
+  transform: scale(0.96) translateY(15px);
+  transition: transform var(--transition-smooth);
+}
+
+.modal-overlay.is-active .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-offwhite-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-charcoal-900);
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-charcoal-900);
+  color: var(--color-white);
+}
+
+.modal-close-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.modal-body {
+  padding: 2.5rem;
+}
+
+.modal-project-media {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius-xs);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background-color: var(--color-beige-300);
+}
+
+.modal-project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-project-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 2.5rem;
+}
+
+.modal-spec-box {
+  background-color: var(--color-offwhite-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-xs);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-spec-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-spec-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-wood-700);
+}
+
+.modal-spec-val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-charcoal-900);
+}
+
+/* Success Modal */
+.modal-success-content {
+  text-align: center;
+  padding: 3.5rem 2.5rem;
+}
+
+.modal-success-icon {
+  width: 68px;
+  height: 68px;
+  background-color: #F0F9F3;
+  border: 2px solid #34A853;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.modal-success-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #34A853;
+}
+
+.modal-success-content h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-success-content p {
+  color: var(--color-charcoal-600);
+  max-width: 480px;
+  margin: 0 auto 2rem auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE COMPONENT ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .estimator-grid-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .estimator-result-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .estimator-wrapper {
+    padding: 2rem 1.25rem;
+  }
+
+  .estimator-steps-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .estimator-grid-options {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+}
