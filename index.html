@@ -48,7 +48,7 @@
     "image": "assets/images/logo.png",
     "description": "Premium interior design, modular kitchens, bespoke millwork, and turnkey execution for urban residential and commercial clients.",
     "telephone": ["+91 98223 97417", "+91 98222 48927"],
-    "email": "qualityinterior98@gmail.com",
+    "email": "qualityinteriors93@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Lake Town, Pune",
@@ -102,7 +102,7 @@
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          <a href="mailto:qualityinterior98@gmail.com">qualityinterior98@gmail.com</a>
+          <a href="mailto:qualityinteriors93@gmail.com">qualityinteriors93@gmail.com</a>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@
         <span>Speak to an Interior Architect:</span>
         <a href="tel:+919822397417">+91 98223 97417</a>
         <a href="tel:+919822248927">+91 98222 48927</a>
-        <a href="mailto:qualityinterior98@gmail.com">qualityinterior98@gmail.com</a>
+        <a href="mailto:qualityinteriors93@gmail.com">qualityinteriors93@gmail.com</a>
       </div>
       <a href="#contact" class="btn btn-light mobile-nav-btn" style="width:100%; text-align:center;">
         <span>Book a Free Consultation</span>
@@ -1173,8 +1173,8 @@
               </p>
             </div>
             <div class="testimonial-author">
-              <img src="assets/images/testimonials/client1.jpg" alt="Priya & Rohit S." class="testimonial-avatar"
-                width="46" height="46" loading="lazy">
+              <img src="assets/images/testimonials/client1.jpg" alt="Client Story — Priya & Rohit S."
+                class="testimonial-avatar" width="46" height="46" loading="lazy">
               <div class="testimonial-info">
                 <h4>Priya & Rohit S.</h4>
                 <p>3BHK Villa, Whitefield</p>
@@ -1218,8 +1218,8 @@
               </p>
             </div>
             <div class="testimonial-author">
-              <img src="assets/images/testimonials/client2.jpg" alt="Aditya Menon" class="testimonial-avatar" width="46"
-                height="46" loading="lazy">
+              <img src="assets/images/testimonials/client2.jpg" alt="Client Story — Aditya Menon"
+                class="testimonial-avatar" width="46" height="46" loading="lazy">
               <div class="testimonial-info">
                 <h4>Aditya Menon</h4>
                 <p>Contemporary Kitchen & Living, Indiranagar</p>
@@ -1263,8 +1263,8 @@
               </p>
             </div>
             <div class="testimonial-author">
-              <img src="assets/images/testimonials/client3.jpg" alt="Ananya Rao" class="testimonial-avatar" width="46"
-                height="46" loading="lazy">
+              <img src="assets/images/testimonials/client3.jpg" alt="Client Story — Ananya Rao"
+                class="testimonial-avatar" width="46" height="46" loading="lazy">
               <div class="testimonial-info">
                 <h4>Ananya Rao</h4>
                 <p>Commercial Studio, Koramangala</p>
@@ -1316,7 +1316,7 @@
                 </div>
                 <div class="cta-contact-text">
                   <span>Studio Email Inquiry</span>
-                  <a href="mailto:qualityinterior98@gmail.com">qualityinterior98@gmail.com</a>
+                  <a href="mailto:qualityinteriors93@gmail.com">qualityinteriors93@gmail.com</a>
                 </div>
               </div>
 
@@ -1346,25 +1346,36 @@
             </div>
 
             <form id="project-booking-form" novalidate>
+              <!-- Honeypot anti-spam protection -->
+              <div class="form-honeypot"
+                style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;"
+                aria-hidden="true">
+                <label for="form-website-field">Leave this field blank</label>
+                <input type="text" id="form-website-field" name="website_hp" tabindex="-1" autocomplete="off">
+              </div>
+
               <div class="form-grid">
                 <!-- Full Name -->
                 <div class="form-group">
                   <label class="form-label" for="form-name">Full Name *</label>
-                  <input type="text" id="form-name" class="form-input" placeholder="e.g. Vikram Sharma" required>
+                  <input type="text" id="form-name" class="form-input" placeholder="e.g. Vikram Sharma" required
+                    autocomplete="name">
                   <span class="form-error">Please enter your name</span>
                 </div>
 
                 <!-- Phone -->
                 <div class="form-group">
                   <label class="form-label" for="form-phone">Phone Number *</label>
-                  <input type="tel" id="form-phone" class="form-input" placeholder="e.g. 9822397417" required>
+                  <input type="tel" id="form-phone" class="form-input" placeholder="e.g. 9822397417" required
+                    autocomplete="tel">
                   <span class="form-error">Please enter a valid phone</span>
                 </div>
 
                 <!-- Email -->
                 <div class="form-group">
                   <label class="form-label" for="form-email">Email Address *</label>
-                  <input type="email" id="form-email" class="form-input" placeholder="e.g. vikram@example.com" required>
+                  <input type="email" id="form-email" class="form-input" placeholder="e.g. vikram@example.com" required
+                    autocomplete="email">
                   <span class="form-error">Please enter a valid email</span>
                 </div>
 
@@ -1414,6 +1425,9 @@
                     placeholder="Tell us about your floor plan, possession date, or specific furniture requirements..."></textarea>
                 </div>
               </div>
+
+              <!-- Form Alert / Error Message -->
+              <div class="form-alert-container" id="form-alert-msg" style="display: none;" role="alert"></div>
 
               <button type="submit" class="btn btn-primary form-submit-btn">
                 <span>Request a Consultation</span>
@@ -1529,7 +1543,7 @@
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <a href="mailto:qualityinterior98@gmail.com">qualityinterior98@gmail.com</a>
+              <a href="mailto:qualityinteriors93@gmail.com">qualityinteriors93@gmail.com</a>
             </div>
           </div>
         </div>
