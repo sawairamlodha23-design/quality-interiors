@@ -8,7 +8,7 @@
 // BACKEND CONFIGURATION
 // Paste your deployed Google Apps Script Web App URL here after deployment.
 // =============================================================================
-const GOOGLE_SCRIPT_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxM2F103mJQJaasJHq_8IJ894AT_vqYRmGNaSdg1yioTuX44jTUmC3sfwH7H9AR-uUF/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
   initConsultationForm();
@@ -333,8 +333,8 @@ function clearErrors(form) {
 function showAlert(container, message, type = 'error') {
   if (!container) return;
   container.className = `form-alert-container ${type === 'error' ? 'form-alert-error' : 'form-alert-info'}`;
-  
-  const icon = type === 'error' 
+
+  const icon = type === 'error'
     ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="8"></line></svg>`
     : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="8"></line></svg>`;
 
